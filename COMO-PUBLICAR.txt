@@ -1,0 +1,37 @@
+SITE MAKAV — COMO COLOCAR NO AR
+================================
+
+O que tem nesta pasta
+- index.html  → a página inteira
+- assets/     → imagens, logo, "k", favicon e imagem de compartilhamento
+Não renomeie nem separe os arquivos: o index.html procura as imagens dentro de assets/.
+
+PASSO 1 — Hospedar (grátis, sem programar) no Netlify
+1. Acesse https://app.netlify.com/drop e crie uma conta (pode entrar com o Google).
+2. Arraste a PASTA inteira (não o zip) para a área "Drag and drop your site output folder here".
+3. Em segundos o site fica no ar num endereço provisório, tipo https://nome-aleatorio.netlify.app.
+   Abra no computador e no celular para conferir.
+4. Em "Site configuration > Change site name", troque o nome para algo como "makav".
+
+PASSO 2 — Ligar o domínio bymakav.com.br
+Hoje o bymakav.com.br está conectado ao Canva (é de lá que sai o /portifolio).
+1. No Netlify: "Domain management > Add a domain" e digite bymakav.com.br.
+2. O Netlify vai mostrar os registros de DNS. Normalmente são:
+   - Tipo A, nome @ (ou vazio), valor 75.2.60.5
+   - Tipo CNAME, nome www, valor makav.netlify.app (o endereço do passo 1)
+   Use sempre os valores que o Netlify mostrar na tela.
+3. Coloque esses registros onde o domínio é administrado
+   (Registro.br, Canva, Hostinger, GoDaddy... onde ele foi comprado).
+   Apague os registros antigos que apontam o @ e o www para o Canva.
+4. Volte ao Netlify e clique em "Verify". A propagação leva de minutos a algumas horas.
+   O certificado de segurança (https) é gerado automaticamente.
+
+PASSO 3 — Não perder o portfólio do Canva
+Quando o domínio principal sair do Canva, o endereço bymakav.com.br/portifolio para de funcionar.
+Solução: no Canva, publique o portfólio num subdomínio, por exemplo portfolio.bymakav.com.br
+(Canva > Publicar site > Usar domínio próprio > subdomínio) e crie o registro de DNS que o Canva pedir.
+Depois disso, os botões "Ver portfólio completo" do site precisam apontar para o endereço novo
+(é só pedir que eu atualizo).
+
+ATUALIZAR O SITE DEPOIS
+No Netlify: "Deploys" > arraste a pasta nova. O endereço continua o mesmo.
